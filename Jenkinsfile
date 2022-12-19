@@ -10,7 +10,6 @@ pipeline {
         stage('docker') {
             steps {
             sh """
-            cd saleor-dashboard
             docker image build -t saleor:1.0 .
             docker container run -d saleor:1.0 
             docker tag saleor:1.0 maheshryali/newimage:1.0
